@@ -3,7 +3,7 @@ const fileInput = document.getElementById('fileInput');
 const fileName = document.getElementById('fileName');
 
 fileInput.addEventListener('change', () => {
-  fileName.textContent = "Selected: " + fileInput.files[0].name;
+  fileName.textContent = "File Successfully Added!"
 });
 
 // Modal Logic
