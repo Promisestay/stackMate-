@@ -52,27 +52,116 @@
     </div>
   </section>
 
-    <!-- pricing section -->
-  <section id="pricing">
-    <h2>Pricing Plans</h2>
-    <div class="pricing-plan">
-      <h3>Free Plan</h3>
-      <p>5GB Storage</p>
-      <p>Basic Features</p>
-      <button>Choose Plan</button>
-    </div>
-    <div class="pricing-plan">
-      <h3>Pro Plan</h3>
-      <p>1TB Storage</p>
-      <p>Advanced Features</p>
-      <button>Choose Plan</button>
-    </div>
-    <div class="pricing-plan">
-      <h3>Business Plan</h3>
-      <p>5TB Storage</p>
-      <p>All Features</p>
-      <button>Choose Plan</button>
-    </div>
+    <!-- Enhanced Pricing Section -->
+    <section id="pricing">
+        <h2>Choose Your Plan</h2>
+        <p class="pricing-subtitle">Start for free, upgrade when you need more space</p>
+        
+        <div class="billing-toggle">
+            <span class="toggle-label">Monthly</span>
+            <label class="toggle-container">
+                <input type="checkbox" class="toggle-input" id="billingToggle">
+                <span class="toggle-switch"></span>
+            </label>
+            <span class="toggle-label">Yearly</span>
+            <span class="savings-badge">Save 20%</span>
+        </div>
+
+        <div class="pricing-container">
+            <div class="pricing-plan fade-in">
+                <div class="plan-header">
+                    <h3>Free Plan</h3>
+                    <div class="storage-visual">
+                        <div class="storage-icon">📁</div>
+                        <div class="storage-amount">5GB</div>
+                    </div>
+                    <div class="plan-price">
+                        $0<span>/month</span>
+                    </div>
+                    <div class="plan-period">Forever free</div>
+                </div>
+                
+                <ul class="plan-features">
+                    <li>5GB cloud storage</li>
+                    <li>File sharing</li>
+                    <li>Mobile app access</li>
+                    <li>Basic support</li>
+                    <li class="unavailable">Advanced encryption</li>
+                    <li class="unavailable">Priority support</li>
+                    <li class="unavailable">Team collaboration</li>
+                </ul>
+                
+                <button class="plan-button secondary" onclick="selectPlan('free')">Get Started</button>
+            </div>
+
+            <div class="pricing-plan popular fade-in">
+                <div class="popular-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Pro Plan</h3>
+                    <div class="storage-visual">
+                        <div class="storage-icon">💾</div>
+                        <div class="storage-amount">1TB</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="monthly-price">$9.99</span>
+                        <span class="yearly-price" style="display: none;">$7.99</span>
+                        <span>/month</span>
+                        <span class="original-price yearly-only" style="display: none;">$9.99</span>
+                    </div>
+                    <div class="plan-period">
+                        <span class="monthly-period">Billed monthly</span>
+                        <span class="yearly-period" style="display: none;">Billed yearly ($95.88/year)</span>
+                    </div>
+                </div>
+                
+                <ul class="plan-features">
+                    <li>1TB cloud storage</li>
+                    <li>Advanced file sharing</li>
+                    <li>Mobile & desktop apps</li>
+                    <li>Priority support</li>
+                    <li>Advanced encryption</li>
+                    <li>Version history</li>
+                    <li class="unavailable">Team management</li>
+                </ul>
+                
+                <button class="plan-button primary" onclick="selectPlan('pro')">Choose Pro</button>
+            </div>
+
+            <div class="pricing-plan fade-in">
+                <div class="plan-header">
+                    <h3>Business Plan</h3>
+                    <div class="storage-visual">
+                        <div class="storage-icon">🏢</div>
+                        <div class="storage-amount">5TB</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="monthly-price">$19.99</span>
+                        <span class="yearly-price" style="display: none;">$15.99</span>
+                        <span>/month</span>
+                        <span class="original-price yearly-only" style="display: none;">$19.99</span>
+                    </div>
+                    <div class="plan-period">
+                        <span class="monthly-period">Billed monthly</span>
+                        <span class="yearly-period" style="display: none;">Billed yearly ($191.88/year)</span>
+                    </div>
+                </div>
+                
+                <ul class="plan-features">
+                    <li>5TB cloud storage</li>
+                    <li>Unlimited file sharing</li>
+                    <li>All platform access</li>
+                    <li>24/7 premium support</li>
+                    <li>Enterprise encryption</li>
+                    <li>Advanced version control</li>
+                    <li>Team management tools</li>
+                    <li>Admin controls</li>
+                </ul>
+                
+                <button class="plan-button primary" onclick="selectPlan('business')">Choose Business</button>
+            </div>
+        </div>
+    </section>
+     
 
   <!-- Footer -->
   <footer>
