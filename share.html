@@ -3,24 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Share Easily - MyDropbox</title>
+  <title>Share Files - MyDropbox</title>
+  <link rel="stylesheet" href="sharepage.css">
 </head>
 <body>
   <header>
-    <h1>🤝 Share Easily</h1>
+    <div class="header-content">
+      <div class="logo">
+        <i class="fas fa-cloud"></i>
+        <span>MyDropbox</span>
+      </div>
+      
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Files</a></li>
+          <li><a href="#" class="active">Share</a></li>
+          <li><a href="#">Recents</a></li>
+        </ul>
+      </nav>
+      
+      <div class="user-actions">
+        <button class="btn btn-outline"><i class="fas fa-search"></i> Search</button>
+        <button class="btn btn-primary"><i class="fas fa-user"></i> Account</button>
+      </div>
+    </div>
   </header>
-
+  
   <main>
-    <p>
-      Share your files with just one click.  
-      MyDropbox makes collaboration simple and secure with shareable links and permissions.  
-    </p>
-    <ul>
-      <li>Generate secure share links</li>
-      <li>Control access (view or edit)</li>
-      <li>Collaborate in real-time</li>
-    </ul>
-    <a href="index.html">⬅ Back to Home</a>
+    <div class="page-header">
+      <div class="page-title">
+        <i class="fas fa-share-alt"></i>
+        <h1>Share Files</h1>
+      </div>
+      <p class="page-description">
+        Share your files with just one click. MyDropbox makes collaboration simple and secure with shareable links and permissions.
+      </p>
+    </div>
+    
+    <div class="share-section">
+      <div class="card">
+        <h2><i class="fas fa-file-export"></i> Share Files</h2>
+        <p>Select files to share with others via link or email invitation.</p>
+        
+        <ul class="file-list">
+          <li class="file-item">
+            <div class="file-icon pdf">
+              <i class="fas fa-file-pdf"></i>
+            </div>
+            <div class="file-info">
+              <div class="file-name">Project_Report.pdf</div>
+              <div class="file-meta">Updated 2 hours ago • 2.4 MB</div>
+            </div>
+            <div class="share-actions">
+              <button class="share-btn" title="Share"><i class="fas fa-share"></i></button>
+              <button class="share-btn" title="More options"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+          </li>
+          
+          <li class="file-item">
+            <div class="file-icon img">
+              <i class="fas fa-file-image"></i>
+            </div>
+            <div class="file-info">
+              <div class="file-name">Design_Mockup.png</div>
+              <div class="file-meta">Updated yesterday • 1.8 MB</div>
+            </div>
+            <div class="share-actions">
+              <button class="share-btn" title="Share"><i class="fas fa-share"></i></button>
+              <button class="share-btn" title="More options"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+          </li>
+          
+          <li class="file-item">
+            <div class="file-icon doc">
+              <i class="fas fa-file-word"></i>
+            </div>
+            <div class="file-info">
+              <div class="file-name">Meeting_Notes.docx</div>
+              <div class="file-meta">Updated 3 days ago • 512 KB</div>
+            </div>
+            <div class="share-actions">
+              <button class="share-btn" title="Share"><i class="fas fa-share"></i></button>
+              <button class="share-btn" title="More options"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+          </li>
+        </ul>
+        
+        <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Files</button>
+      </div>
+      
+      <div class="card">
+        <h2><i class="fas fa-link"></i> Share via Link</h2>
+        <p>Create a shareable link to send to anyone, even if they don't have a MyDropbox account.</p>
+        
+        <div class="link-section">
+          <label for="share-link">Shareable Link</label>
+          <div class="link-container">
+            <input type="text" id="share-link" class="link-input" value="https://mydropbox.com/s/a1b2c3d4e5" readonly>
+            <button class="copy-btn" id="copy-link"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+        </div>
+        
+        <div class="permission-options">
+          <div class="permission-option selected">
+            <i class="fas fa-eye"></i>
+            <h3>View Only</h3>
+            <p>Recipients can view but not edit</p>
+          </div>
+          
+          <div class="permission-option">
+            <i class="fas fa-edit"></i>
+            <h3>Can Edit</h3>
+            <p>Recipients can view and edit</p>
+          </div>
+        </div>
+        
+        <div style="margin-top: 1.5rem;">
+          <label for="link-expiry">Link Expiry (Optional)</label>
+          <select id="link-expiry" class="link-input" style="margin-top: 0.5rem; width: 100%;">
+            <option value="">No expiration</option>
+            <option value="1">1 day</option>
+            <option value="7">7 days</option>
+            <option value="30">30 days</option>
+          </select>
+        </div>
+        
+        <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;">
+          <i class="fas fa-share-alt"></i> Create Share Link
+        </button>
+      </div>
+    </div>
+    
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Secure Sharing</h3>
+        <p>Generate secure share links with password protection and expiration dates.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-users"></i>
+        <h3>Access Control</h3>
+        <p>Control who can view or edit your files with customizable permissions.</p>
+      </div>
+      
+      <div class="feature">
+        <i class="fas fa-sync-alt"></i>
+        <h3>Real-time Collaboration</h3>
+        <p>Collaborate in real-time with automatic sync across all devices.</p>
+      </div>
+    </div>
+    
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
   </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="copyright">
+        &copy; 2023 MyDropbox. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+
 </body>
 </html>
