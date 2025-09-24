@@ -30,91 +30,101 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 
- // Billing toggle functionality
-        const billingToggle = document.getElementById('billingToggle');
-        const monthlyPrices = document.querySelectorAll('.monthly-price');
-        const yearlyPrices = document.querySelectorAll('.yearly-price');
-        const monthlyPeriods = document.querySelectorAll('.monthly-period');
-        const yearlyPeriods = document.querySelectorAll('.yearly-period');
-        const originalPrices = document.querySelectorAll('.original-price');
-
-        billingToggle.addEventListener('change', function() {
-            const isYearly = this.checked;
-            
-            monthlyPrices.forEach(price => {
-                price.style.display = isYearly ? 'none' : 'inline';
-            });
-            
-            yearlyPrices.forEach(price => {
-                price.style.display = isYearly ? 'inline' : 'none';
-            });
-            
-            monthlyPeriods.forEach(period => {
-                period.style.display = isYearly ? 'none' : 'inline';
-            });
-            
-            yearlyPeriods.forEach(period => {
-                period.style.display = isYearly ? 'inline' : 'none';
-            });
-            
-            originalPrices.forEach(price => {
-                price.style.display = isYearly ? 'inline' : 'none';
-            });
-        });
-
-        // Plan selection function
-        function selectPlan(planType) {
-            const isYearly = billingToggle.checked;
-            const billingType = isYearly ? 'yearly' : 'monthly';
-            
-            // Create a visual feedback
-            const button = event.target;
-            const originalText = button.textContent;
-            
-            button.textContent = 'Selected!';
-            button.style.background = '#4CAF50';
-            
-            setTimeout(() => {
-                button.textContent = originalText;
-                if (button.classList.contains('primary')) {
-                    button.style.background = '';
-                }
-            }, 1500);
-            
-            // Here you would typically redirect to a checkout page or open a modal
-            console.log(`Selected plan: ${planType}, billing: ${billingType}`);
-            
-            // Example: Show alert (replace with your actual logic)
-            alert(`You selected the ${planType.charAt(0).toUpperCase() + planType.slice(1)} plan with ${billingType} billing!`);
+ 
+  // Plan selection function
+function selectPlan(planType) {
+    const plans = {
+        free: {
+            name: 'Free Plan',
+            storage: '5GB',
+            price: '$0'
+        },
+        pro: {
+            name: 'Pro Plan',
+            storage: '1TB',
+            price: document.querySelector('#billingToggle').checked ? '$7.99' : '$9.99'
+        },
+        business: {
+            name: 'Business Plan',
+            storage: '5TB',
+            price: document.querySelector('#billingToggle').checked ? '$15.99' : '$19.99'
         }
+    };
 
-        // Add intersection observer for animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        }; 
+    const selectedPlan = plans[planType];
+    const billingType = document.querySelector('#billingToggle').checked ? 'yearly' : 'monthly';
+    
+    // Show confirmation message
+    alert(`You've selected the ${selectedPlan.name}!\nStorage: ${selectedPlan.storage}\nPrice: ${selectedPlan.price}/month\nBilling: ${billingType}`);
+    
+    // Here you would typically redirect to a signup page or process payment
+    console.log(`Plan selected: ${selectedPlan.name}`);
+    console.log(`Billing cycle: ${billingType}`);
+    
+    // Add visual feedback
+    highlightSelectedPlan(planType);
+}
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, observerOptions);
+// Function to highlight the selected plan
+function highlightSelectedPlan(planType) {
+    // Remove highlight from all plans
+    document.querySelectorAll('.pricing-plan').forEach(plan => {
+        plan.classList.remove('selected');
+    });
+    
+    // Add highlight to selected plan
+    const selectedPlanElement = document.querySelector(`[onclick="selectPlan('${planType}')"]`).closest('.pricing-plan');
+    selectedPlanElement.classList.add('selected');
+    
+    // Remove highlight after 2 seconds
+    setTimeout(() => {
+        selectedPlanElement.classList.remove('selected');
+    }, 2000);
+}
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
+// Billing toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const billingToggle = document.getElementById('billingToggle');
+    
+    if (billingToggle) {
+        billingToggle.addEventListener('change', function() {
+            toggleBillingPeriod(this.checked);
         });
+    }
+});
 
-        // Add some particle effects on hover (optional enhancement)
-        document.querySelectorAll('.pricing-plan').forEach(plan => {
-            plan.addEventListener('mouseenter', function() {
-                this.style.background = 'linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%)';
-            });
-            
-            plan.addEventListener('mouseleave', function() {
-                this.style.background = 'white';
-            });
+// Function to toggle between monthly and yearly billing
+function toggleBillingPeriod(isYearly) {
+    // Toggle price displays
+    const monthlyPrices = document.querySelectorAll('.monthly-price');
+    const yearlyPrices = document.querySelectorAll('.yearly-price');
+    const monthlyPeriods = document.querySelectorAll('.monthly-period');
+    const yearlyPeriods = document.querySelectorAll('.yearly-period');
+    const originalPrices = document.querySelectorAll('.original-price');
+    
+    if (isYearly) {
+        // Show yearly prices
+        monthlyPrices.forEach(price => price.style.display = 'none');
+        yearlyPrices.forEach(price => price.style.display = 'inline');
+        monthlyPeriods.forEach(period => period.style.display = 'none');
+        yearlyPeriods.forEach(period => period.style.display = 'inline');
+        originalPrices.forEach(price => price.style.display = 'inline');
+    } else {
+        // Show monthly prices
+        monthlyPrices.forEach(price => price.style.display = 'inline');
+        yearlyPrices.forEach(price => price.style.display = 'none');
+        monthlyPeriods.forEach(period => period.style.display = 'inline');
+        yearlyPeriods.forEach(period => period.style.display = 'none');
+        originalPrices.forEach(price => price.style.display = 'none');
+    }
+    
+    // Add animation effect
+    const pricingContainer = document.querySelector('.pricing-container');
+    pricingContainer.style.transform = 'scale(0.98)';
+    setTimeout(() => {
+        pricingContainer.style.transform = 'scale(1)';
+    }, 150);
+}
         });
     
 

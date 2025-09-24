@@ -336,7 +336,7 @@ footer {
 }
 
 .plan-button.secondary {
-    background: transparent;
+    background: #4B0082; /* Dark purple */
     color: #8A2BE2;
     border: 2px solid #8A2BE2;
 }
