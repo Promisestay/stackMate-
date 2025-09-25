@@ -26,18 +26,72 @@ nav a {
   text-decoration: none;
 }
 
-/* Hero */
+/* Hero Section */
 #hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("https://www.shutterstock.com/image-photo/prague-czechia-10-21-2024-600nw-2578880331.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 4rem 2rem;
-  background: #f2f6ff;
+  color: #fff;
+  position: relative;
+  padding: 0 20px;
 }
-#hero button {
-  padding: 0.8rem 1.2rem;
-  background: #0061ff;
-  color: white;
-  border: none;
-  cursor: pointer;
+
+/* Content Styling */
+.hero-content {
+  max-width: 800px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+#hero p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: #f1f1f1;
+}
+
+/* Button Styling */
+.btn-primary {
+  padding: 14px 35px;
+  background: #ff6b6b;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.btn-primary:hover {
+  background: #ff4040;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 64, 64, 0.6);
+}
+
+/* Subtle animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
 }
 
 /* Features */
