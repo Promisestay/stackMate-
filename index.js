@@ -125,7 +125,7 @@ function toggleBillingPeriod(isYearly) {
         pricingContainer.style.transform = 'scale(1)';
     }, 150);
 }
-        });
+    
     
 
 
