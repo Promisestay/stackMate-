@@ -390,10 +390,11 @@ footer {
 }
 
 .plan-button.secondary {
-    background: #4B0082; /* Dark purple */
-    color: #8A2BE2;
+    background:  linear-gradient(135deg, #8A2BE2, #4B0082);
+    color: white;
     border: 2px solid #8A2BE2;
 }
+
 
 .plan-button:hover {
     transform: translateY(-2px);
