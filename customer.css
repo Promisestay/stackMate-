@@ -1,0 +1,89 @@
+/* General styling */
+.reviews-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f3f8ff, #eef2f7);
+  font-family: "Segoe UI", sans-serif;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.reviews-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Review container */
+.review-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.review-card {
+  display: none;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.review-card.active {
+  display: block;
+  animation: fadeIn 0.6s ease;
+}
+
+.review-text {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.review-rating {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #f5b50a;
+}
+
+.review-author {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Navigation dots */
+.review-nav {
+  margin-top: 20px;
+}
+
+.nav-dot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-dot.active {
+  background: #333;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
