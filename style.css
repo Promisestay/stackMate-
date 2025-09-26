@@ -107,11 +107,91 @@ nav a {
 
 /* Footer */
 footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+  background: #2563eb;
+  color: #fff;
+  padding: 40px 20px;
 }
+
+footer .footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+footer .footlogo img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+footer .footlogo p {
+  max-width: 250px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+footer .social {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+footer .social a {
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+footer .social a:hover {
+  color: #00aaff;
+}
+
+footer .quick h4,
+footer .Subscribe h4 {
+  margin-bottom: 10px;
+}
+
+footer .quick ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .quick ul li {
+  margin-bottom: 8px;
+}
+
+footer .quick ul a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer .quick ul a:hover {
+  color: #fff;
+}
+
+footer .Subscribe input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+footer .Subscribe button {
+  padding: 8px 16px;
+  border: none;
+  background: #00aaff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer .Subscribe button:hover {
+  background: #0088cc;
+}
+
 
 /* Modal */
 .modal {
