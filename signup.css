@@ -84,6 +84,21 @@ padding-right: 1.5rem;
 background-color: #080808;
 }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #0061ff;  
+  font-weight: 600;
+  margin: 1rem 2rem;
+  transition: gap 0.2s;
+}
+    
+.back-link:hover {
+  gap: 0.8rem;
+}
+
 
 .message {
   margin-top: 1rem;
